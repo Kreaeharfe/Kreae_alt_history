@@ -11,7 +11,7 @@ state={
 	state_category = metropolis
 	
 	history={
-		owner = HOV
+		owner = FRA
 		victory_points = {
 			6469 10 
 		}
@@ -34,6 +34,7 @@ state={
 		add_core_of = GER
 		add_core_of = HOV
 		add_core_of = PRS
+		add_core_of = FRA
 
 		1939.1.1 = {
 			buildings = {

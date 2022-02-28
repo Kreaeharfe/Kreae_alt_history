@@ -1,0 +1,228 @@
+focus_tree = {
+	id = hannoveran_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = HOV
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	focus = {
+		id = HOV_lower_saxons_rise
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 2
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.5
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {is_in_faction_with = ENG}
+						country_exists = ENG
+					}
+				}
+
+				if = {
+					limit = {
+						ENG = { is_in_faction = yes }
+					}
+
+					ENG = { add_to_faction = HOV }
+				} else = {
+					ENG = { create_faction = "Anglo-Germanic Alliance" }
+					ENG = { add_to_faction = HOV }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HOV_a_greater_germany
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 4
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.5
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {is_in_faction_with = PRS}
+						country_exists = PRS
+					}
+				}
+
+				if = {
+					limit = {
+						PRS = { is_in_faction = yes }
+					}
+
+					PRS = { add_to_faction = HOV }
+				} else = {
+					create_faction = "Low German League"
+					add_to_faction = PRS
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HOV_surpress_the_riots
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 6
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.5
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {is_in_faction_with = GER}
+						country_exists = GER
+					}
+				}
+
+				if = {
+					limit = {
+						GER = { is_in_faction = yes }
+					}
+
+					GER = { add_to_faction = HOV }
+				} else = {
+					create_faction = "West Germany"
+					add_to_faction = GER
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = HOV_seek_for_the_soviets
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 8
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.5
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {is_in_faction_with = SOV}
+						country_exists = SOV
+					}
+				}
+
+				if = {
+					limit = {
+						SOV = { is_in_faction = yes }
+					}
+
+					SOV = { add_to_faction = HOV }
+				} else = {
+					SOV = { create_faction = "Red Eurasians" }
+					SOV = { add_to_faction = HOV }
+				}
+			}
+		}
+	}
+}

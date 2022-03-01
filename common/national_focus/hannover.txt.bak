@@ -41,10 +41,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_popularity = { ideology = communism popularity = 0.05 }
-			add_popularity = { ideology = democratic popularity = -0.10 }
-			add_popularity = { ideology = fascism popularity = -0.05 }
-			add_popularity = { ideology = neutrality popularity = -0.05 }
+			add_political_power = 120
 		}
 	}
 	focus = {

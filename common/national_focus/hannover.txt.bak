@@ -87,10 +87,11 @@ focus = {
 	focus = {
 		id = with_stalin
 		on = GFX_goal_generic_demand_territory
-		prerequisite = { focus = strenghten_the_communist_rule }
+		prerequisite = { focus =  }
 		x = 32
-		y = 3
-		cost = 4
+		y = 6
+		cost = 5
+		
 	
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		bypass = { is_in_faction_with = SOV }
@@ -109,15 +110,14 @@ focus = {
 	focus = {
 		id = without_stalin
 		on = GFX_goal_generic_demand_territory
-		prerequisite = { focus = strenghten_the_communist_rule }
+		prerequisite = { focus =  }
 		x = 28
-		y = 3
-		cost = 4
+		y = 6
+		cost = 5
 		mutually_exclusive = { focus = with_stalin }
-
+	
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		available = { is_in_faction = no 
-		
+		bypass = { is_in_faction_with = SOV }
 	
 		available_if_capitulated = yes
 
@@ -128,3 +128,58 @@ focus = {
 			add_popularity = { ideology = communism popularity = 0.10 }
 		}
 	}
+	focus = {
+		id = march_on_the_fascists
+		on = GFX_goal_generic_demand_territory
+		prerequisite = { focus = strenghten_the_communist_rule }
+		x = 30
+		y = 3
+		cost = 5
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		available_if_capitulated = yes
+
+		completion_reward = {
+		create_faction = anti_fascist_allience
+		add_to_faction = PRS
+		declare_war_on = { target = GER type = annex_everything }
+		add_to_war = { tergeted_allience = PRS enemy = GER }
+		}
+	}
+	focus = {
+		id = the_austrian_question
+		on = GFX_goal_generic_demand_territory
+		prerequisite = { focus = march_on_the_fascists }
+		x = 30
+		y = 4
+		cost = 5
+		bypass = { is_puppet_of = HOV }
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		available_if_capitulated = yes
+
+		completion_reward = {
+		dismantle_faction = yes
+		puppet = AUS
+		}
+	}
+	focus = {
+		id = unite_germany
+		on = GFX_goal_generic_demand_territory
+		prerequisite = { focus = the_austrian_question }
+		x = 30
+		y = 5
+		cost = 5
+	
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	
+		available_if_capitulated = yes
+
+		completion_reward = {
+		declare_war_on = { target = PRS type = annex_everything }
+		}
+	}
+	
+    
